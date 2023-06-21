@@ -4,8 +4,8 @@ class SizeConfig {
   static late MediaQueryData _mediaQueryData;
   static late double screenWidth;
   static late double screenHeight;
-  static late double defaultSize;
-  static late Orientation orientation;
+  static double defaultSize = 0.0;
+  static Orientation? orientation;
 
   void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context);
@@ -14,8 +14,8 @@ class SizeConfig {
     orientation = _mediaQueryData.orientation;
 
     // if the screen size increase or decrease then our defaultSize also vary
-    defaultSize = orientation == Orientation.landscape
-        ? screenHeight * 0.024
-        : screenWidth * 0.024;
+    //   defaultSize = orientation == Orientation.landscape
+    //       ? screenHeight * 0.024
+    //       : screenWidth * 0.024;
   }
 }
