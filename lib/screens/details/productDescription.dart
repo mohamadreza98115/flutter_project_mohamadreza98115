@@ -65,7 +65,7 @@ class ProductDescription extends StatelessWidget {
                 child: Text(
                   "Add to Cart",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 203, 9, 9),
                     fontSize: defaultSize * 1.6,
                     fontWeight: FontWeight.bold,
                   ),

@@ -1,10 +1,11 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_project_mohamadreza98115/components/titleText.dart';
-import 'package:flutter_project_mohamadreza98115/size_config.dart';
-import './../../screens/home/Categories.dart';
-import './../../services/fetchProducts.dart';
-import './recomandedProdects.dart';
+import 'package:flutter_project_mohamadreza98115/models/Product.dart';
+import './../../components/titleText.dart';
+import '/services/fetchCategories.dart';
+import '/services/fetchProducts.dart';
+import '/size_config.dart';
+import './../home/recomandedProdects.dart';
+import './../home/categories.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -18,33 +19,29 @@ class Body extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.all(defaultSize * 2),
+              padding: EdgeInsets.all(defaultSize * 2), //20
               child: TitleText(
-                  key: Key('cattitle'), title: "Browse by Categories"),
+                title: "Browse by Categories",
+              ),
             ),
             FutureBuilder(
-              builder: (context, AsyncSnapshot<dynamic> snapshot) =>
-                  snapshot.hasData
-                      ? Categories(
-                          categories: snapshot.data,
-                          key: Key('value'),
-                        )
-                      : Center(
-                          child: Image.asset("assets/ripple.gif"),
-                        ),
+              future: fetchCategories(),
+              builder: (context, AsyncSnapshot snapshot) => snapshot.hasData
+                  ? Categories(
+                      categories: snapshot.data,
+                      key: Key('fetchCAT'),
+                    )
+                  : Center(child: Image.asset("assets/ripple.gif")),
             ),
-            Divider(
-              height: 5,
-            ),
+            Divider(height: 5),
             Padding(
-              padding: EdgeInsets.all(defaultSize * 2),
-              child:
-                  TitleText(key: Key('recomended'), title: "Recomands for you"),
+              padding: EdgeInsets.all(defaultSize * 2), //20
+              child: TitleText(title: "Recommands For You"),
             ),
             // Right Now product is our demo product
             FutureBuilder(
               future: fetchProducts(),
-              builder: (context, AsyncSnapshot<dynamic> snapshot) {
+              builder: (context, AsyncSnapshot snapshot) {
                 return snapshot.hasData
                     ? RecommandProducts(products: snapshot.data)
                     : Center(child: Image.asset('assets/ripple.gif'));

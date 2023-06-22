@@ -1,10 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_project_mohamadreza98115/services/fetchCategories.dart';
+import '/models/Categories.dart';
+import 'categoryCard.dart';
 
 class Categories extends StatelessWidget {
   const Categories({
-    required Key key,
+    Key? key,
     required this.categories,
   }) : super(key: key);
 
@@ -15,8 +15,13 @@ class Categories extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-          // children: List.generate(categories.length, (index) => ),
+        children: List.generate(
+          categories.length,
+          (index) => CategoryCard(
+            category: categories[index],
           ),
+        ),
+      ),
     );
   }
 }
