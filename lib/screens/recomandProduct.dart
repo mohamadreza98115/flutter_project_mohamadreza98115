@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import '/models/Products.dart';
+import '/screens/details/detailScreen.dart';
+import '/screens/productCard.dart';
+
 import '../../../size_config.dart';
-import '../details/detailScreen.dart';
-import '../productCard.dart';
 
 class RecommandProducts extends StatelessWidget {
   const RecommandProducts({
@@ -9,7 +11,7 @@ class RecommandProducts extends StatelessWidget {
     required this.products,
   }) : super(key: key);
   // Because our Api provie us list of products
-  final List products;
+  final List<Product> products;
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +21,12 @@ class RecommandProducts extends StatelessWidget {
       child: GridView.builder(
         // We just turn off grid view scrolling
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         // just for demo
         itemCount: products.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount:
-              SizeConfig.orientation == Orientation.portrait ? 2 : 4,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          // SizeConfig.orientation == Orientation.portrait ? 2 : 4,
           mainAxisSpacing: 20,
           crossAxisSpacing: 20,
           childAspectRatio: 0.693,

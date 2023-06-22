@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '/models/Product.dart';
+import '/models/Products.dart';
+
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
@@ -7,11 +8,11 @@ class ProductDescription extends StatelessWidget {
   const ProductDescription({
     Key? key,
     required this.product,
-    this.press,
+    required this.press,
   }) : super(key: key);
 
   final Product product;
-  final Function()? press;
+  final Function() press;
 
   @override
   Widget build(BuildContext context) {
@@ -59,13 +60,13 @@ class ProductDescription extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
-                  backgroundColor: kPrimaryColor,
+                  iconColor: kPrimaryColor,
                 ),
                 onPressed: press,
                 child: Text(
                   "Add to Cart",
                   style: TextStyle(
-                    color: Color.fromARGB(255, 203, 9, 9),
+                    color: Colors.white,
                     fontSize: defaultSize * 1.6,
                     fontWeight: FontWeight.bold,
                   ),

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import './../../screens/home/recomandedProdects.dart';
-import './../../components/titleText.dart';
-import './../../services/fetchCategories.dart';
-import './../../services/fetchProducts.dart';
+import '/screens/recomandProduct.dart';
+import '/title_text.dart';
+import '/services/fetchCategories.dart';
+
+import '../services/fetchProducts.dart';
 import 'categories.dart';
 
 class Body extends StatelessWidget {
@@ -35,7 +36,7 @@ class Body extends StatelessWidget {
             // Right Now product is our demo product
             FutureBuilder(
               future: fetchProducts(),
-              builder: (context, AsyncSnapshot snapshot) {
+              builder: (context,AsyncSnapshot snapshot) {
                 return snapshot.hasData
                     ? RecommandProducts(products: snapshot.data)
                     : Center(child: Image.asset('assets/ripple.gif'));

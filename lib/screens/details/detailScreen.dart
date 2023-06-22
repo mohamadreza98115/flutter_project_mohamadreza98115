@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '/constants.dart';
-import '/models/Product.dart';
+import '/models/Products.dart';
 import '/size_config.dart';
-import './body.dart';
+
+import 'body.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Product product;

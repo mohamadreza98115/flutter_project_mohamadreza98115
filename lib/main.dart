@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_mohamadreza98115/screens/home/homeScreen.dart';
+import 'package:flutter/services.dart';
+import '/constants.dart';
+import '/screens/home_Screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,19 +15,23 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Furniture App',
-        theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-          // textTheme: GoogleFonts.dmSansTextTheme().apply(displayColor: kTextColor),
-          appBarTheme: AppBarTheme(
-            color: Colors.transparent,
-            elevation: 0,
-          ),
-          visualDensity: VisualDensity.adaptivePlatformDensity,
+      debugShowCheckedModeBanner: false,
+      title: 'Furniture App',
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+        // Here we set DM Sans as our default fonts
+        // Now we also apply out text color to all flutter textTheme
+        textTheme:
+            GoogleFonts.dmSansTextTheme().apply(displayColor: kTextColor),
+        // Almost all of our app bar have this style
+        appBarTheme: const AppBarTheme(
+          color: Colors.transparent,
+          elevation: 0,
+          systemOverlayStyle: SystemUiOverlayStyle.dark,
         ),
-        home: HomeScreen());
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: const HomeScreen(),
+    );
   }
 }

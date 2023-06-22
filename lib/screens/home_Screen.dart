@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'body.dart';
+import '/screens/body.dart';
 import 'package:flutter_exit_app/flutter_exit_app.dart';
 
-import './../../constants.dart';
-import './../../size_config.dart';
+import '../constants.dart';
+import '../size_config.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

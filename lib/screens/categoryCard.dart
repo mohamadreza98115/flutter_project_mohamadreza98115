@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './../../components/titleText.dart';
+import '/title_text.dart';
 import '/models/Categories.dart';
 
 import '../../../constants.dart';
