@@ -57,6 +57,7 @@ class ProductDescription extends StatelessWidget {
               child: TextButton(
                 style: TextButton.styleFrom(
                   padding: EdgeInsets.all(defaultSize * 1.5),
+                  backgroundColor: Colors.black,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),

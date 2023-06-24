@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
             GoogleFonts.dmSansTextTheme().apply(displayColor: kTextColor),
         // Almost all of our app bar have this style
         appBarTheme: const AppBarTheme(
-          color: Colors.transparent,
+          color: Colors.blueGrey,
           elevation: 0,
           systemOverlayStyle: SystemUiOverlayStyle.dark,
         ),
