@@ -38,11 +38,18 @@ class Body extends StatelessWidget {
               right: -defaultSize * 7.5,
               child: Hero(
                 tag: product.id,
-                child: Image.network(
-                  product.image,
-                  fit: BoxFit.cover,
-                  height: defaultSize * 37.8, //378
-                  width: defaultSize * 36.4,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+
+                  child: Container(
+                    margin: const EdgeInsets.only(right: 70),
+                    child: Image.network(
+                      product.image,
+                      fit: BoxFit.cover,
+                      height: defaultSize * 37.8, //378
+                      width: defaultSize * 25,
+                    ),
+                  ),
                 ),
               ),
             ),

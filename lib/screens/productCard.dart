@@ -34,10 +34,13 @@ class ProductCard extends StatelessWidget {
                 aspectRatio: 1,
                 child: Hero(
                   tag: product.id,
-                  child: FadeInImage.assetNetwork(
-                    placeholder: "assets/spinner.gif",
-                    image: product.image,
-                    fit: BoxFit.cover,
+                  child: ClipRRect(
+                    borderRadius:const BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.circular(20)),
+                    child: FadeInImage.assetNetwork(
+                      placeholder: "assets/spinner.gif",
+                      image: product.image,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),

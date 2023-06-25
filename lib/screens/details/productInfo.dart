@@ -33,7 +33,7 @@ class ProductInfo extends StatelessWidget {
             Text(
               product.title,
               style: TextStyle(
-                fontSize: defaultSize * 2.4, //24
+                fontSize: defaultSize * 2.2, //24
                 fontWeight: FontWeight.bold,
                 letterSpacing: -0.8,
                 height: 1.4,

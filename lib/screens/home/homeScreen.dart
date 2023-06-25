@@ -46,12 +46,11 @@ AppBar buildAppBar() {
         onPressed: () {},
         icon: const Icon(Icons.qr_code_scanner),
         iconSize: SizeConfig.defaultSize * 2.4, //24
-        color: Colors.black,
       ),
       const Center(
         child: Text(
           "Scan",
-          style: TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
       SizedBox(width: SizeConfig.defaultSize),
